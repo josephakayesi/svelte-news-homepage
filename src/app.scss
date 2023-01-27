@@ -1,0 +1,81 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $primary-font;
+}
+
+body {
+    width: 100%;
+    background-color: $off-white;
+}
+
+hr {
+    display: block;
+    height: 0.5px;
+    border: 0;
+    border-top: 0.1px solid rgba(255, 253, 250, 0.5);
+    margin: 2rem 0px;
+}
+
+main {
+    padding: 2rem 0;
+    display: grid;
+    height: 100%;
+    grid-template-columns: auto;
+    grid-template-areas: 
+        "hero"
+        "intro"
+        "article"
+        "sidebar"
+        "catalog-one"
+        "catalog-two"
+        "catalog-three"
+    
+}
+
+.container {
+    padding: 1.2rem
+}
+
+.button {
+    width: fit-content;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 25px;
+    letter-spacing: 5px;;
+    font-weight: 400;
+    cursor: pointer;
+
+    &--primary {
+        background-color: $soft-red;
+        color: $off-white;
+                         
+        &:hover {
+            background-color: $soft-red-hover;
+        }
+    }
+}
+
+@include desktop {
+    .container {
+        padding: 3.6rem 9.375rem;
+    }
+
+    main {
+        padding: 2rem 0;
+        display: grid;
+        height: 100%;
+        grid-template-columns: auto ;
+        gap: 1.625rem;
+        grid-template-areas: 
+            "hero        hero        sidebar"
+            "intro       article     sidebar"
+            "catalog-one catalog-two catalog-three"
+    }
+}
